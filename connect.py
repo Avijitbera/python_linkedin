@@ -11,6 +11,7 @@ import time
 import csv
 import logging
 
+
 logging.basicConfig(filename="error_log.log",
                     format='%(asctime)s %(message)s',
                     filemode='w')
@@ -55,6 +56,7 @@ def load_connect_csv(driver):
     # print(lines)
     lines.reverse()
 
+
     with open('connect.csv', 'r') as f:
         reader = csv.reader(f)
         # loop through each row and print each value
@@ -62,6 +64,8 @@ def load_connect_csv(driver):
             for e in row:
 
                 if e != "url":
+
+
                     for lin in lines:
 
                         if e in lin:
@@ -70,12 +74,17 @@ def load_connect_csv(driver):
                             # print(status)
                             if status != "Connect":
                                 connect_profile(driver, e)
+                        else:
+                            connect_profile(driver, e)
+                    else:
+                        connect_profile(driver, e)
 
 
 def connect_profile(driver: WebDriver, url):
     try:
 
         driver.get('https://www.linkedin.com/')
+        driver.maximize_window()
 
         with open(COOKIE_FILE, 'rb') as file:
             cookies = pickle.load(file)
@@ -90,23 +99,50 @@ def connect_profile(driver: WebDriver, url):
         try:
             connect_button = driver.find_element(By.XPATH,
                                                  '//button[contains(@class, "artdeco-button artdeco-button--2 artdeco-button--primary ember-view pvs-profile-actions__action")]')
-            print(connect_button)
-            print(connect_button)
-            if connect_button:
-                print("Found")
-                connect_button.click()
-                time.sleep(5)
+
+            if connect_button.text == "Follow":
+                all_button = driver.find_elements(By.TAG_NAME, "button")
+                connect_buttons = [btn for btn in all_button if btn.text == "More"]
+                print("Button List")
+                time.sleep(1)
+                driver.execute_script("arguments[0].click();", connect_buttons[0])
+                time.sleep(3)
+                print("Show More")
+                connect_now_button = driver.find_elements(By.XPATH,
+                                                          "//div[contains(@class, 'artdeco-dropdown__item artdeco-dropdown__item--is-dropdown ember-view full-width display-flex align-items-center')]")
+
+                buttons = [btn for btn in connect_now_button if "Connect" in btn.text]
+                for itm in buttons:
+                    print(itm.text)
+                time.sleep(3)
+                driver.execute_script("arguments[0].click();", buttons[0])
+                print("Click Connect")
+                time.sleep(3)
                 add_note_button = driver.find_element(By.XPATH,
                                                       '//button[contains(@class, "artdeco-button artdeco-button--2 artdeco-button--primary ember-view ml1")]')
                 add_note_button.click()
-                time.sleep(2)
-                # send_invitation_button = driver.find_element(By.XPATH, '//button[contains(@class, "ml1")]')
+                time.sleep(3)
                 update_record(url, "Connect")
-                # send_invitation_button.click()
-
-                # print('Connection request sent!')
+                time.sleep(5)
             else:
-                print('Already connected or no connect button found.')
+
+                if connect_button:
+                    print("Found")
+                    connect_button.click()
+                    time.sleep(5)
+                    add_note_button = driver.find_element(By.XPATH,
+                                                          '//button[contains(@class, "artdeco-button artdeco-button--2 artdeco-button--primary ember-view ml1")]')
+                    add_note_button.click()
+                    time.sleep(5)
+                    # send_invitation_button = driver.find_element(By.XPATH, '//button[contains(@class, "ml1")]')
+                    update_record(url, "Connect")
+                    time.sleep(5)
+
+                    # send_invitation_button.click()
+
+                    # print('Connection request sent!')
+                else:
+                    print('Already connected or no connect button found.')
         except Exception as e:
             logger.error("connect profile error", exc_info=e)
     except Exception as e:
@@ -114,6 +150,7 @@ def connect_profile(driver: WebDriver, url):
 
 
 def update_record(url, send):
+
     with open('record.txt', 'a') as fd:
         fd.write(f'{url} || {send}\n')
 
@@ -122,11 +159,24 @@ isConnected = False
 
 
 def main():
-    while True:
-        check_connection()
-        time.sleep(5)
-        if (isConnected):
-            break
+
+    options = Options()
+    options.add_argument('--disable-notifications')
+    path = os.path.dirname(os.path.abspath(__file__))
+
+    driver = webdriver.Chrome(service=Service(executable_path=f"{path}{CHROME_DRIVER_PATH}"), options=options)
+
+    if not os.path.exists(COOKIE_FILE):
+        login_and_save_cookies(driver)
+    else:
+        load_connect_csv(driver)
+
+    driver.quit()
+    # while True:
+    #     check_connection()
+    #     time.sleep(5)
+    #     if (isConnected):
+    #         break
 
 
 def is_connected():
