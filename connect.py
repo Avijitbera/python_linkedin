@@ -23,10 +23,28 @@ logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
 
 CHROME_DRIVER_PATH = '/chromedriver'
-LINKEDIN_USERNAME = ''
-LINKEDIN_PASSWORD = ''
+LINKEDIN_USERNAME = 'offlyapp@gmail.com'
+LINKEDIN_PASSWORD = 'TesterBest@2027'
 COOKIE_FILE = 'linkedin_cookies.pkl'
 
+formatter = logging.Formatter('%(asctime)s [connect.py] %(levelname)s %(message)s')
+
+
+
+def setup_logger(name, log_file, level=logging.INFO):
+    """To setup as many loggers as you want"""
+
+    handler = logging.FileHandler(log_file)
+    handler.setFormatter(formatter)
+
+    logger = logging.getLogger(name)
+    logger.setLevel(level)
+    logger.addHandler(handler)
+
+    return logger
+
+
+full_logger = setup_logger('full_logger', 'full_log.log')
 
 #login and save cookies locally
 def login_and_save_cookies(driver: WebDriver):
@@ -41,11 +59,13 @@ def login_and_save_cookies(driver: WebDriver):
         time.sleep(2)
         password_field.submit()
 
-        time.sleep(5)  # Wait for login to complete
-
+        time.sleep(20)  # Wait for login to complete
+        full_logger.info("Login Success")
         # Save cookies
         with open(COOKIE_FILE, 'wb') as file:
             pickle.dump(driver.get_cookies(), file)
+        full_logger.info("Cookies saved")
+        time.sleep(5)
     except Exception as e:
         logger.error("connect profile error", exc_info=e)
 
@@ -55,29 +75,57 @@ def load_connect_csv(driver):
     lines = [line.rstrip('\n') for line in r]
     # print(lines)
     lines.reverse()
+    full_logger.info("record.txt file loaded")
+
+    lists = []
+    if len(lines) > 0:
+        for item in lines:
+            url = item.split('||')
+            lists.append((url[0].strip(), url[1].strip()))
 
 
     with open('connect.csv', 'r') as f:
         reader = csv.reader(f)
+
         # loop through each row and print each value
         for row in reader:
             for e in row:
-
                 if e != "url":
 
+                    if len(lines) > 0:
+                        result = [t for t in lists if t[0] == e and t[1] != "Connect"]
+                        # matches = (x for x in lists if x[1] > e)
 
-                    for lin in lines:
-
-                        if e in lin:
-
-                            status = lin.split('||')[1]
-                            # print(status)
-                            if status != "Connect":
-                                connect_profile(driver, e)
-                        else:
+                        if len(result) > 0:
                             connect_profile(driver, e)
+                        else:
+                            result = [t for t in lists if t[0] == e]
+                            if len(result) < 1:
+                                connect_profile(driver, e)
                     else:
                         connect_profile(driver, e)
+                        # for lin in lines:
+                        #     print(e in lin)
+                        #     print(e)
+                        #     print(lin)
+                        #     if e in lin:
+                        #         status = lin.split('||')[1]
+                        #         print(status)
+                        #         print("Status")
+                        #         if status.strip() != "Connect":
+                        #             print("CALL")
+                        #             connect_profile(driver, e)
+                        #     else:
+                        #         print("CALL@")
+                        #         connect_profile(driver, e)
+                    # else:
+                    #
+                    #     connect_profile(driver, e)
+
+                            # connect_profile(driver, e)
+                    # else:
+                    #
+                    #     connect_profile(driver, e)
 
 
 def connect_profile(driver: WebDriver, url):
@@ -92,7 +140,17 @@ def connect_profile(driver: WebDriver, url):
                 driver.add_cookie(cookie)
 
         driver.get(url)
+        full_logger.info(f"Loading profile {url}")
         time.sleep(5)
+        current_url = driver.current_url
+        print(current_url)
+        if "authwall" in current_url:
+            time.sleep(60)
+            full_logger.info(f"Failed profile {url} auth required")
+
+        name = driver.find_element(By.XPATH, "//h1[contains(@class, 'text-heading-xlarge inline t-24 v-align-middle break-words')]")
+
+        full_logger.info(f"Profile Loaded {name.text} || {url}")
         # check_connection_status(driver)
 
         # Connect
@@ -127,16 +185,22 @@ def connect_profile(driver: WebDriver, url):
             else:
 
                 if connect_button:
-                    print("Found")
-                    connect_button.click()
-                    time.sleep(5)
-                    add_note_button = driver.find_element(By.XPATH,
-                                                          '//button[contains(@class, "artdeco-button artdeco-button--2 artdeco-button--primary ember-view ml1")]')
-                    add_note_button.click()
-                    time.sleep(5)
-                    # send_invitation_button = driver.find_element(By.XPATH, '//button[contains(@class, "ml1")]')
-                    update_record(url, "Connect")
-                    time.sleep(5)
+
+                    if connect_button.text == "Message":
+                        full_logger.info(f"Connection request has send to {name.text} || {url}")
+                        update_record(url, "Connect")
+                        time.sleep(5)
+                    else:
+                        connect_button.click()
+                        time.sleep(5)
+                        add_note_button = driver.find_element(By.XPATH,
+                                                              '//button[contains(@class, "artdeco-button artdeco-button--2 artdeco-button--primary ember-view ml1")]')
+                        add_note_button.click()
+                        time.sleep(5)
+                        # send_invitation_button = driver.find_element(By.XPATH, '//button[contains(@class, "ml1")]')
+                        full_logger.info(f"Connection request has send to {name.text} || {url}")
+                        update_record(url, "Connect")
+                        time.sleep(5)
 
                     # send_invitation_button.click()
 
@@ -155,23 +219,25 @@ def update_record(url, send):
         fd.write(f'{url} || {send}\n')
 
 
-isConnected = False
+
 
 
 def main():
-
-    options = Options()
-    options.add_argument('--disable-notifications')
-    path = os.path.dirname(os.path.abspath(__file__))
-
-    driver = webdriver.Chrome(service=Service(executable_path=f"{path}{CHROME_DRIVER_PATH}"), options=options)
-
-    if not os.path.exists(COOKIE_FILE):
-        login_and_save_cookies(driver)
-    else:
-        load_connect_csv(driver)
-
-    driver.quit()
+    check_connection()
+    # options = Options()
+    # options.add_argument('--disable-notifications')
+    # path = os.path.dirname(os.path.abspath(__file__))
+    #
+    # driver = webdriver.Chrome(service=Service(executable_path=f"{path}{CHROME_DRIVER_PATH}"), options=options)
+    #
+    # if not os.path.exists(COOKIE_FILE):
+    #     full_logger.info("Cookie not found")
+    #     login_and_save_cookies(driver)
+    #     load_connect_csv(driver)
+    # else:
+    #     load_connect_csv(driver)
+    #
+    # driver.quit()
     # while True:
     #     check_connection()
     #     time.sleep(5)
@@ -180,29 +246,34 @@ def main():
 
 
 def is_connected():
-    try:
-        # connect to the host -- tells us if the host is actually
-        # reachable
-        socket.create_connection(("1.1.1.1", 53))
-        return True
-    except OSError:
-        pass
-    return False
+    while True:
+
+        try:
+            # connect to the host -- tells us if the host is actually
+            # reachable
+            socket.create_connection(("1.1.1.1", 53))
+            full_logger.info("Connected")
+            return True
+        except OSError:
+            full_logger.info("Reconnecting...")
+            time.sleep(5)
 
 
 def check_connection():
-    print(is_connected())
+    connected = is_connected()
 
-    if is_connected():
-        isConnected = is_connected()
+    if connected:
+
         options = Options()
         options.add_argument('--disable-notifications')
         path = os.path.dirname(os.path.abspath(__file__))
 
         driver = webdriver.Chrome(service=Service(executable_path=f"{path}{CHROME_DRIVER_PATH}"), options=options)
-        print("Internet connection is available. Continuing to check...")
+
         if not os.path.exists(COOKIE_FILE):
+            full_logger.info("Cookie not found")
             login_and_save_cookies(driver)
+            load_connect_csv(driver)
         else:
             load_connect_csv(driver)
 

@@ -1,231 +1,131 @@
-2024-08-16 08:17:01,564 Skipping Selenium Manager; path to chrome driver specified in Service class: /home/avijitbera/Projects/Pyton/linkedin_automation/chromedriver
-2024-08-16 08:17:01,567 Started executable: `/home/avijitbera/Projects/Pyton/linkedin_automation/chromedriver` in a child process with pid: 9420 using 0 to output -3
-2024-08-16 08:17:01,592 POST http://localhost:38829/session {'capabilities': {'firstMatch': [{}], 'alwaysMatch': {'browserName': 'chrome', 'pageLoadStrategy': <PageLoadStrategy.normal: 'normal'>, 'goog:chromeOptions': {'extensions': [], 'args': ['--disable-notifications']}}}}
-2024-08-16 08:17:01,593 Starting new HTTP connection (1): localhost:38829
-2024-08-16 08:17:04,195 http://localhost:38829 "POST /session HTTP/11" 200 0
-2024-08-16 08:17:04,198 Remote response: status=200 | data={"value":{"capabilities":{"acceptInsecureCerts":false,"browserName":"chrome","browserVersion":"127.0.6533.99","chrome":{"chromedriverVersion":"127.0.6533.119 (bdef6783a05f0b3f885591e7d2c7b2aec1a89dea-refs/branch-heads/6533@{#1999})","userDataDir":"/tmp/.org.chromium.Chromium.HXUTz2"},"fedcm:accounts":true,"goog:chromeOptions":{"debuggerAddress":"localhost:33729"},"networkConnectionEnabled":false,"pageLoadStrategy":"normal","platformName":"linux","proxy":{},"setWindowRect":true,"strictFileInteractability":false,"timeouts":{"implicit":0,"pageLoad":300000,"script":30000},"unhandledPromptBehavior":"dismiss and notify","webauthn:extension:credBlob":true,"webauthn:extension:largeBlob":true,"webauthn:extension:minPinLength":true,"webauthn:extension:prf":true,"webauthn:virtualAuthenticators":true},"sessionId":"32d861ee6af6af42233ab4dcfee7b561"}} | headers=HTTPHeaderDict({'Content-Length': '849', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:04,198 Finished Request
-2024-08-16 08:17:04,199 POST http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/url {'url': 'https://www.linkedin.com/'}
-2024-08-16 08:17:06,709 http://localhost:38829 "POST /session/32d861ee6af6af42233ab4dcfee7b561/url HTTP/11" 200 0
-2024-08-16 08:17:06,709 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:06,710 Finished Request
-2024-08-16 08:17:06,710 POST http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/window/maximize {}
-2024-08-16 08:17:06,899 http://localhost:38829 "POST /session/32d861ee6af6af42233ab4dcfee7b561/window/maximize HTTP/11" 200 0
-2024-08-16 08:17:06,899 Remote response: status=200 | data={"value":{"height":728,"width":1366,"x":0,"y":40}} | headers=HTTPHeaderDict({'Content-Length': '50', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:06,899 Finished Request
-2024-08-16 08:17:06,902 POST http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/cookie {'cookie': {'domain': '.linkedin.com', 'expiry': 1726368213, 'httpOnly': False, 'name': 'aam_uuid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '74003300447044437690636353092653506851'}}
-2024-08-16 08:17:07,019 http://localhost:38829 "POST /session/32d861ee6af6af42233ab4dcfee7b561/cookie HTTP/11" 200 0
-2024-08-16 08:17:07,019 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:07,019 Finished Request
-2024-08-16 08:17:07,020 POST http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/cookie {'cookie': {'domain': '.www.linkedin.com', 'expiry': 1723862620, 'httpOnly': False, 'name': 'chp_token', 'path': '/', 'sameSite': 'None', 'secure': True, 'value': 'AgH_BPVPaJffOQAAAZFZEbxnq_hG6rFW9S1EMz0p5TtRGfK0KcZonhkqRkAgBuPVbMnwajMfbHQBI2-12J_qy0I4RlXpoovC2zQf...'}}
-2024-08-16 08:17:07,034 http://localhost:38829 "POST /session/32d861ee6af6af42233ab4dcfee7b561/cookie HTTP/11" 200 0
-2024-08-16 08:17:07,034 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:07,035 Finished Request
-2024-08-16 08:17:07,035 POST http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/cookie {'cookie': {'domain': '.linkedin.com', 'httpOnly': False, 'name': 'AMCVS_14215E3D5995C57C0A495C55%40AdobeOrg', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1'}}
-2024-08-16 08:17:07,046 http://localhost:38829 "POST /session/32d861ee6af6af42233ab4dcfee7b561/cookie HTTP/11" 200 0
-2024-08-16 08:17:07,046 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:07,046 Finished Request
-2024-08-16 08:17:07,047 POST http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/cookie {'cookie': {'domain': '.linkedin.com', 'expiry': 1723862610, 'httpOnly': False, 'name': 'lidc', 'path': '/', 'sameSite': 'None', 'secure': True, 'value': '"b=VGST09:s=V:r=V:a=V:p=V:g=2975:u=1:x=1:i=1723776210:t=1723862610:v=2:sig=AQF3k04udIITxnSvGGMy3CBfX...'}}
-2024-08-16 08:17:07,055 http://localhost:38829 "POST /session/32d861ee6af6af42233ab4dcfee7b561/cookie HTTP/11" 200 0
-2024-08-16 08:17:07,055 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:07,055 Finished Request
-2024-08-16 08:17:07,056 POST http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/cookie {'cookie': {'domain': '.linkedin.com', 'expiry': 1739328213, 'httpOnly': False, 'name': 'AMCV_14215E3D5995C57C0A495C55%40AdobeOrg', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '-637568504%7CMCIDTS%7C19952%7CMCMID%7C73849004075170362100584316731135595240%7CMCAAMLH-1724381013%7C...'}}
-2024-08-16 08:17:07,066 http://localhost:38829 "POST /session/32d861ee6af6af42233ab4dcfee7b561/cookie HTTP/11" 200 0
-2024-08-16 08:17:07,066 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:07,067 Finished Request
-2024-08-16 08:17:07,067 POST http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/cookie {'cookie': {'domain': '.linkedin.com', 'expiry': 1755312221, 'httpOnly': False, 'name': 'bcookie', 'path': '/', 'sameSite': 'None', 'secure': True, 'value': '"v=2&6b80ad48-2999-433c-8410-bfdc5d3027fa"'}}
-2024-08-16 08:17:07,077 http://localhost:38829 "POST /session/32d861ee6af6af42233ab4dcfee7b561/cookie HTTP/11" 200 0
-2024-08-16 08:17:07,077 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:07,077 Finished Request
-2024-08-16 08:17:07,077 POST http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/cookie {'cookie': {'domain': '.www.linkedin.com', 'httpOnly': False, 'name': 'JSESSIONID', 'path': '/', 'sameSite': 'None', 'secure': True, 'value': '"ajax:2683891273843004868"'}}
-2024-08-16 08:17:07,085 http://localhost:38829 "POST /session/32d861ee6af6af42233ab4dcfee7b561/cookie HTTP/11" 200 0
-2024-08-16 08:17:07,085 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:07,086 Finished Request
-2024-08-16 08:17:07,086 POST http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/cookie {'cookie': {'domain': '.www.linkedin.com', 'expiry': 1755312221, 'httpOnly': True, 'name': 'bscookie', 'path': '/', 'sameSite': 'None', 'secure': True, 'value': '"v=1&20240816024330740c9210-3f2b-4fcb-8a1e-28dd931af0dbAQFOZdxPmWaQAohprvhTQ-23V4GaIDEP"'}}
-2024-08-16 08:17:07,104 http://localhost:38829 "POST /session/32d861ee6af6af42233ab4dcfee7b561/cookie HTTP/11" 200 0
-2024-08-16 08:17:07,105 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:07,105 Finished Request
-2024-08-16 08:17:07,105 POST http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/cookie {'cookie': {'domain': '.linkedin.com', 'expiry': 1731552213, 'httpOnly': False, 'name': '_gcl_au', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1.1.189400779.1723776213'}}
-2024-08-16 08:17:07,113 http://localhost:38829 "POST /session/32d861ee6af6af42233ab4dcfee7b561/cookie HTTP/11" 200 0
-2024-08-16 08:17:07,114 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:07,114 Finished Request
-2024-08-16 08:17:07,114 POST http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/cookie {'cookie': {'domain': '.linkedin.com', 'httpOnly': False, 'name': 'lang', 'path': '/', 'sameSite': 'None', 'secure': True, 'value': 'v=2&lang=en-us'}}
-2024-08-16 08:17:07,122 http://localhost:38829 "POST /session/32d861ee6af6af42233ab4dcfee7b561/cookie HTTP/11" 200 0
-2024-08-16 08:17:07,122 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:07,122 Finished Request
-2024-08-16 08:17:07,122 POST http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/cookie {'cookie': {'domain': '.www.linkedin.com', 'expiry': 1755312210, 'httpOnly': True, 'name': 'li_rm', 'path': '/', 'sameSite': 'None', 'secure': True, 'value': 'AQEAA-H-xGk0gAAAAZFZEZaQpdfL4259a4ivJSlS8B0I6et3qiAyzHd1vfZuBBy416v3l5huFtvZq8wTWQMYbsxrw-UPMaFNtgP7...'}}
-2024-08-16 08:17:07,130 http://localhost:38829 "POST /session/32d861ee6af6af42233ab4dcfee7b561/cookie HTTP/11" 200 0
-2024-08-16 08:17:07,130 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:07,131 Finished Request
-2024-08-16 08:17:07,131 POST http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/url {'url': 'https://www.linkedin.com/in/aakanksha-singhal-268824281/'}
-2024-08-16 08:17:07,905 http://localhost:38829 "POST /session/32d861ee6af6af42233ab4dcfee7b561/url HTTP/11" 200 0
-2024-08-16 08:17:07,905 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:07,905 Finished Request
-2024-08-16 08:17:27,906 POST http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element {'using': 'xpath', 'value': '//button[contains(@class, "rtdeco-button artdeco-button--muted artdeco-button--2 artdeco-button--sec...'}
-2024-08-16 08:17:27,984 http://localhost:38829 "POST /session/32d861ee6af6af42233ab4dcfee7b561/element HTTP/11" 404 0
-2024-08-16 08:17:27,985 Remote response: status=404 | data={"value":{"error":"no such element","message":"no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//button[contains(@class, \"rtdeco-button artdeco-button--muted artdeco-button--2 artdeco-button--secondary ember-view pvs-profile-actions__action\")]\"}\n  (Session info: chrome=127.0.6533.99)","stacktrace":"#0 0x55c2bfdf66ca \u003Cunknown>\n#1 0x55c2bfac7600 \u003Cunknown>\n#2 0x55c2bfb16bcb \u003Cunknown>\n#3 0x55c2bfb16eb1 \u003Cunknown>\n#4 0x55c2bfb5ab24 \u003Cunknown>\n#5 0x55c2bfb398cd \u003Cunknown>\n#6 0x55c2bfb5804a \u003Cunknown>\n#7 0x55c2bfb39643 \u003Cunknown>\n#8 0x55c2bfb09d31 \u003Cunknown>\n#9 0x55c2bfb0a79e \u003Cunknown>\n#10 0x55c2bfdbe25b \u003Cunknown>\n#11 0x55c2bfdc21f2 \u003Cunknown>\n#12 0x55c2bfdab615 \u003Cunknown>\n#13 0x55c2bfdc2d82 \u003Cunknown>\n#14 0x55c2bfd9025f \u003Cunknown>\n#15 0x55c2bfde5e68 \u003Cunknown>\n#16 0x55c2bfde6040 \u003Cunknown>\n#17 0x55c2bfdf549c \u003Cunknown>\n#18 0x7f59f4e921b7 start_thread\n#19 0x7f59f4f1439c __clone3\n"}} | headers=HTTPHeaderDict({'Content-Length': '1021', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:27,985 Finished Request
-2024-08-16 08:17:27,986 POST http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/elements {'using': 'tag name', 'value': 'button'}
-2024-08-16 08:17:28,050 http://localhost:38829 "POST /session/32d861ee6af6af42233ab4dcfee7b561/elements HTTP/11" 200 0
-2024-08-16 08:17:28,050 Remote response: status=200 | data={"value":[{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.40"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.41"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.42"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.43"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.27"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.44"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.28"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.81"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.46"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.49"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.82"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.83"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.84"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.85"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.86"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.87"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.88"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.89"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.90"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.91"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.92"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.93"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.94"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.95"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.96"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.97"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.98"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.99"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.100"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.101"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.102"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.103"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.104"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.105"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.106"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.107"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.108"},{"element-6066-11e4-a52e-4f735466cecf":"f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.73"}]} | headers=HTTPHeaderDict({'Content-Length': '4466', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:28,051 Finished Request
-2024-08-16 08:17:28,051 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.40/text {}
-2024-08-16 08:17:28,127 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.40/text HTTP/11" 200 0
-2024-08-16 08:17:28,127 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:28,127 Finished Request
-2024-08-16 08:17:28,127 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.41/text {}
-2024-08-16 08:17:28,189 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.41/text HTTP/11" 200 0
-2024-08-16 08:17:28,190 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:28,190 Finished Request
-2024-08-16 08:17:28,190 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.42/text {}
-2024-08-16 08:17:28,230 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.42/text HTTP/11" 200 0
-2024-08-16 08:17:28,231 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:28,231 Finished Request
-2024-08-16 08:17:28,231 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.43/text {}
-2024-08-16 08:17:28,302 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.43/text HTTP/11" 200 0
-2024-08-16 08:17:28,302 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:28,302 Finished Request
-2024-08-16 08:17:28,303 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.27/text {}
-2024-08-16 08:17:28,359 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.27/text HTTP/11" 200 0
-2024-08-16 08:17:28,360 Remote response: status=200 | data={"value":"Continue"} | headers=HTTPHeaderDict({'Content-Length': '20', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:28,360 Finished Request
-2024-08-16 08:17:28,360 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.44/text {}
-2024-08-16 08:17:28,391 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.44/text HTTP/11" 200 0
-2024-08-16 08:17:28,391 Remote response: status=200 | data={"value":"Sign in"} | headers=HTTPHeaderDict({'Content-Length': '19', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:28,392 Finished Request
-2024-08-16 08:17:28,393 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.28/text {}
-2024-08-16 08:17:28,432 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.28/text HTTP/11" 200 0
-2024-08-16 08:17:28,433 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:28,433 Finished Request
-2024-08-16 08:17:28,433 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.81/text {}
-2024-08-16 08:17:28,462 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.81/text HTTP/11" 200 0
-2024-08-16 08:17:28,463 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:28,463 Finished Request
-2024-08-16 08:17:28,463 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.46/text {}
-2024-08-16 08:17:28,482 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.46/text HTTP/11" 200 0
-2024-08-16 08:17:28,483 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:28,483 Finished Request
-2024-08-16 08:17:28,483 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.49/text {}
-2024-08-16 08:17:28,502 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.49/text HTTP/11" 200 0
-2024-08-16 08:17:28,502 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:28,502 Finished Request
-2024-08-16 08:17:28,503 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.82/text {}
-2024-08-16 08:17:28,522 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.82/text HTTP/11" 200 0
-2024-08-16 08:17:28,522 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:28,522 Finished Request
-2024-08-16 08:17:28,522 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.83/text {}
-2024-08-16 08:17:28,542 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.83/text HTTP/11" 200 0
-2024-08-16 08:17:28,542 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:28,542 Finished Request
-2024-08-16 08:17:28,542 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.84/text {}
-2024-08-16 08:17:28,567 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.84/text HTTP/11" 200 0
-2024-08-16 08:17:28,568 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:28,568 Finished Request
-2024-08-16 08:17:28,568 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.85/text {}
-2024-08-16 08:17:28,601 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.85/text HTTP/11" 200 0
-2024-08-16 08:17:28,601 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:28,601 Finished Request
-2024-08-16 08:17:28,601 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.86/text {}
-2024-08-16 08:17:28,626 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.86/text HTTP/11" 200 0
-2024-08-16 08:17:28,626 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:28,626 Finished Request
-2024-08-16 08:17:28,627 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.87/text {}
-2024-08-16 08:17:28,649 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.87/text HTTP/11" 200 0
-2024-08-16 08:17:28,649 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:28,650 Finished Request
-2024-08-16 08:17:28,650 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.88/text {}
-2024-08-16 08:17:28,687 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.88/text HTTP/11" 200 0
-2024-08-16 08:17:28,687 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:28,688 Finished Request
-2024-08-16 08:17:28,688 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.89/text {}
-2024-08-16 08:17:28,711 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.89/text HTTP/11" 200 0
-2024-08-16 08:17:28,711 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:28,712 Finished Request
-2024-08-16 08:17:28,712 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.90/text {}
-2024-08-16 08:17:28,732 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.90/text HTTP/11" 200 0
-2024-08-16 08:17:28,732 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:28,732 Finished Request
-2024-08-16 08:17:28,733 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.91/text {}
-2024-08-16 08:17:28,752 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.91/text HTTP/11" 200 0
-2024-08-16 08:17:28,753 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:28,753 Finished Request
-2024-08-16 08:17:28,753 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.92/text {}
-2024-08-16 08:17:28,786 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.92/text HTTP/11" 200 0
-2024-08-16 08:17:28,787 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:28,787 Finished Request
-2024-08-16 08:17:28,787 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.93/text {}
-2024-08-16 08:17:28,812 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.93/text HTTP/11" 200 0
-2024-08-16 08:17:28,812 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:28,813 Finished Request
-2024-08-16 08:17:28,813 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.94/text {}
-2024-08-16 08:17:28,847 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.94/text HTTP/11" 200 0
-2024-08-16 08:17:28,847 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:28,848 Finished Request
-2024-08-16 08:17:28,848 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.95/text {}
-2024-08-16 08:17:28,876 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.95/text HTTP/11" 200 0
-2024-08-16 08:17:28,876 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:28,876 Finished Request
-2024-08-16 08:17:28,876 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.96/text {}
-2024-08-16 08:17:28,901 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.96/text HTTP/11" 200 0
-2024-08-16 08:17:28,901 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:28,901 Finished Request
-2024-08-16 08:17:28,901 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.97/text {}
-2024-08-16 08:17:28,922 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.97/text HTTP/11" 200 0
-2024-08-16 08:17:28,922 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:28,923 Finished Request
-2024-08-16 08:17:28,923 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.98/text {}
-2024-08-16 08:17:28,949 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.98/text HTTP/11" 200 0
-2024-08-16 08:17:28,949 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:28,950 Finished Request
-2024-08-16 08:17:28,950 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.99/text {}
-2024-08-16 08:17:28,974 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.99/text HTTP/11" 200 0
-2024-08-16 08:17:28,975 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:28,975 Finished Request
-2024-08-16 08:17:28,975 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.100/text {}
-2024-08-16 08:17:29,002 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.100/text HTTP/11" 200 0
-2024-08-16 08:17:29,002 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:29,002 Finished Request
-2024-08-16 08:17:29,002 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.101/text {}
-2024-08-16 08:17:29,022 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.101/text HTTP/11" 200 0
-2024-08-16 08:17:29,022 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:29,023 Finished Request
-2024-08-16 08:17:29,023 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.102/text {}
-2024-08-16 08:17:29,049 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.102/text HTTP/11" 200 0
-2024-08-16 08:17:29,049 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:29,049 Finished Request
-2024-08-16 08:17:29,049 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.103/text {}
-2024-08-16 08:17:29,074 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.103/text HTTP/11" 200 0
-2024-08-16 08:17:29,074 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:29,074 Finished Request
-2024-08-16 08:17:29,075 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.104/text {}
-2024-08-16 08:17:29,103 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.104/text HTTP/11" 200 0
-2024-08-16 08:17:29,103 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:29,103 Finished Request
-2024-08-16 08:17:29,103 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.105/text {}
-2024-08-16 08:17:29,124 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.105/text HTTP/11" 200 0
-2024-08-16 08:17:29,124 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:29,124 Finished Request
-2024-08-16 08:17:29,124 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.106/text {}
-2024-08-16 08:17:29,156 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.106/text HTTP/11" 200 0
-2024-08-16 08:17:29,157 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:29,157 Finished Request
-2024-08-16 08:17:29,157 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.107/text {}
-2024-08-16 08:17:29,188 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.107/text HTTP/11" 200 0
-2024-08-16 08:17:29,188 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:29,188 Finished Request
-2024-08-16 08:17:29,188 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.108/text {}
-2024-08-16 08:17:29,223 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.108/text HTTP/11" 200 0
-2024-08-16 08:17:29,224 Remote response: status=200 | data={"value":""} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:29,224 Finished Request
-2024-08-16 08:17:29,224 GET http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.73/text {}
-2024-08-16 08:17:29,254 http://localhost:38829 "GET /session/32d861ee6af6af42233ab4dcfee7b561/element/f.C5FA55D6FFB759F6B1E185DCC614DC50.d.D8B89022CD4683BD39F7C1F049CD6DF0.e.73/text HTTP/11" 200 0
-2024-08-16 08:17:29,254 Remote response: status=200 | data={"value":"Language"} | headers=HTTPHeaderDict({'Content-Length': '20', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:29,254 Finished Request
-2024-08-16 08:17:30,254 Disconnect profile error
+2024-08-17 00:24:37,513 Connected
+2024-08-17 00:24:37,514 Skipping Selenium Manager; path to chrome driver specified in Service class: /home/avijitbera/Projects/Pyton/linkedin_automation/chromedriver
+2024-08-17 00:24:37,516 Started executable: `/home/avijitbera/Projects/Pyton/linkedin_automation/chromedriver` in a child process with pid: 26930 using 0 to output -3
+2024-08-17 00:24:37,528 POST http://localhost:34789/session {'capabilities': {'firstMatch': [{}], 'alwaysMatch': {'browserName': 'chrome', 'pageLoadStrategy': <PageLoadStrategy.normal: 'normal'>, 'goog:chromeOptions': {'extensions': [], 'args': ['--disable-notifications']}}}}
+2024-08-17 00:24:37,529 Starting new HTTP connection (1): localhost:34789
+2024-08-17 00:24:40,156 http://localhost:34789 "POST /session HTTP/11" 200 0
+2024-08-17 00:24:40,156 Remote response: status=200 | data={"value":{"capabilities":{"acceptInsecureCerts":false,"browserName":"chrome","browserVersion":"127.0.6533.99","chrome":{"chromedriverVersion":"127.0.6533.119 (bdef6783a05f0b3f885591e7d2c7b2aec1a89dea-refs/branch-heads/6533@{#1999})","userDataDir":"/tmp/.org.chromium.Chromium.twlrbe"},"fedcm:accounts":true,"goog:chromeOptions":{"debuggerAddress":"localhost:46833"},"networkConnectionEnabled":false,"pageLoadStrategy":"normal","platformName":"linux","proxy":{},"setWindowRect":true,"strictFileInteractability":false,"timeouts":{"implicit":0,"pageLoad":300000,"script":30000},"unhandledPromptBehavior":"dismiss and notify","webauthn:extension:credBlob":true,"webauthn:extension:largeBlob":true,"webauthn:extension:minPinLength":true,"webauthn:extension:prf":true,"webauthn:virtualAuthenticators":true},"sessionId":"87bd8f4de2dfc2f719195822007620e5"}} | headers=HTTPHeaderDict({'Content-Length': '849', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-17 00:24:40,157 Finished Request
+2024-08-17 00:24:40,159 record.txt file loaded
+2024-08-17 00:24:40,163 POST http://localhost:34789/session/87bd8f4de2dfc2f719195822007620e5/url {'url': 'https://www.linkedin.com/'}
+2024-08-17 00:24:44,151 http://localhost:34789 "POST /session/87bd8f4de2dfc2f719195822007620e5/url HTTP/11" 200 0
+2024-08-17 00:24:44,153 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-17 00:24:44,156 Finished Request
+2024-08-17 00:24:44,156 POST http://localhost:34789/session/87bd8f4de2dfc2f719195822007620e5/window/maximize {}
+2024-08-17 00:24:44,340 http://localhost:34789 "POST /session/87bd8f4de2dfc2f719195822007620e5/window/maximize HTTP/11" 200 0
+2024-08-17 00:24:44,341 Remote response: status=200 | data={"value":{"height":708,"width":1050,"x":10,"y":50}} | headers=HTTPHeaderDict({'Content-Length': '51', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-17 00:24:44,341 Finished Request
+2024-08-17 00:24:44,341 POST http://localhost:34789/session/87bd8f4de2dfc2f719195822007620e5/cookie {'cookie': {'domain': '.linkedin.com', 'httpOnly': True, 'name': 'fptctx2', 'path': '/', 'sameSite': 'Lax', 'secure': True, 'value': 'taBcrIH61PuCVH7eNCyH0FFaWZWIHTJWSYlBtG47cVvNRWVgwe9p1rRnjaEVIHGXAlOcRTV88Dbkf2ociPR5A%252fGg7Hk5gtSW...'}}
+2024-08-17 00:24:44,534 http://localhost:34789 "POST /session/87bd8f4de2dfc2f719195822007620e5/cookie HTTP/11" 200 0
+2024-08-17 00:24:44,534 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-17 00:24:44,534 Finished Request
+2024-08-17 00:24:44,534 POST http://localhost:34789/session/87bd8f4de2dfc2f719195822007620e5/cookie {'cookie': {'domain': '.linkedin.com', 'expiry': 1755353775, 'httpOnly': True, 'name': 'dfpfpt', 'path': '/', 'sameSite': 'Lax', 'secure': True, 'value': 'a45970f8f8674648a430561ba4362069'}}
+2024-08-17 00:24:44,546 http://localhost:34789 "POST /session/87bd8f4de2dfc2f719195822007620e5/cookie HTTP/11" 200 0
+2024-08-17 00:24:44,546 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-17 00:24:44,546 Finished Request
+2024-08-17 00:24:44,546 POST http://localhost:34789/session/87bd8f4de2dfc2f719195822007620e5/cookie {'cookie': {'domain': '.linkedin.com', 'expiry': 1726409768, 'httpOnly': False, 'name': 'lms_analytics', 'path': '/', 'sameSite': 'None', 'secure': True, 'value': 'AQFkoAqs_JZjBgAAAZFbi7W_d6mY2Kt5VdPp--femLostse4qEqP3dDHNyYYlYvjEyR8o2-cg0vbtkGrzSE0gta0LxOXgMJS'}}
+2024-08-17 00:24:44,557 http://localhost:34789 "POST /session/87bd8f4de2dfc2f719195822007620e5/cookie HTTP/11" 200 0
+2024-08-17 00:24:44,557 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-17 00:24:44,558 Finished Request
+2024-08-17 00:24:44,558 POST http://localhost:34789/session/87bd8f4de2dfc2f719195822007620e5/cookie {'cookie': {'domain': '.linkedin.com', 'expiry': 1739369768, 'httpOnly': False, 'name': 'AMCV_14215E3D5995C57C0A495C55%40AdobeOrg', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '-637568504%7CMCIDTS%7C19952%7CMCMID%7C75621383958860099913626288859224943079%7CMCAAMLH-1724422568%7C...'}}
+2024-08-17 00:24:44,572 http://localhost:34789 "POST /session/87bd8f4de2dfc2f719195822007620e5/cookie HTTP/11" 200 0
+2024-08-17 00:24:44,572 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-17 00:24:44,572 Finished Request
+2024-08-17 00:24:44,572 POST http://localhost:34789/session/87bd8f4de2dfc2f719195822007620e5/cookie {'cookie': {'domain': '.linkedin.com', 'expiry': 1726409767, 'httpOnly': False, 'name': 'UserMatchHistory', 'path': '/', 'sameSite': 'None', 'secure': True, 'value': 'AQJBg1JsruiNdAAAAZFbi7LzQdWwccdWya_9Evx63aanA3O0J02MKqM5nRrFjRPovZoGnX711n8q81ZQl9h-tf6d_NLhcVs3ZfyB...'}}
+2024-08-17 00:24:44,580 http://localhost:34789 "POST /session/87bd8f4de2dfc2f719195822007620e5/cookie HTTP/11" 200 0
+2024-08-17 00:24:44,581 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-17 00:24:44,581 Finished Request
+2024-08-17 00:24:44,581 POST http://localhost:34789/session/87bd8f4de2dfc2f719195822007620e5/cookie {'cookie': {'domain': '.linkedin.com', 'expiry': 1731593769, 'httpOnly': False, 'name': 'li_sugr', 'path': '/', 'sameSite': 'None', 'secure': True, 'value': '7577cb6a-f279-4699-8b54-cb39b36cb65b'}}
+2024-08-17 00:24:44,589 http://localhost:34789 "POST /session/87bd8f4de2dfc2f719195822007620e5/cookie HTTP/11" 200 0
+2024-08-17 00:24:44,589 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-17 00:24:44,589 Finished Request
+2024-08-17 00:24:44,590 POST http://localhost:34789/session/87bd8f4de2dfc2f719195822007620e5/cookie {'cookie': {'domain': '.www.linkedin.com', 'expiry': 1739369763, 'httpOnly': False, 'name': 'li_theme_set', 'path': '/', 'sameSite': 'Lax', 'secure': True, 'value': 'app'}}
+2024-08-17 00:24:44,598 http://localhost:34789 "POST /session/87bd8f4de2dfc2f719195822007620e5/cookie HTTP/11" 200 0
+2024-08-17 00:24:44,598 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-17 00:24:44,598 Finished Request
+2024-08-17 00:24:44,598 POST http://localhost:34789/session/87bd8f4de2dfc2f719195822007620e5/cookie {'cookie': {'domain': '.www.linkedin.com', 'expiry': 1739369763, 'httpOnly': False, 'name': 'li_theme', 'path': '/', 'sameSite': 'Lax', 'secure': True, 'value': 'light'}}
+2024-08-17 00:24:44,607 http://localhost:34789 "POST /session/87bd8f4de2dfc2f719195822007620e5/cookie HTTP/11" 200 0
+2024-08-17 00:24:44,607 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-17 00:24:44,607 Finished Request
+2024-08-17 00:24:44,607 POST http://localhost:34789/session/87bd8f4de2dfc2f719195822007620e5/cookie {'cookie': {'domain': '.linkedin.com', 'expiry': 1755353769, 'httpOnly': False, 'name': 'bcookie', 'path': '/', 'sameSite': 'None', 'secure': True, 'value': '"v=2&d69e0f39-8f9b-4e31-8de0-091aeed956c4"'}}
+2024-08-17 00:24:44,616 http://localhost:34789 "POST /session/87bd8f4de2dfc2f719195822007620e5/cookie HTTP/11" 200 0
+2024-08-17 00:24:44,616 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-17 00:24:44,616 Finished Request
+2024-08-17 00:24:44,617 POST http://localhost:34789/session/87bd8f4de2dfc2f719195822007620e5/cookie {'cookie': {'domain': '.linkedin.com', 'expiry': 1726409768, 'httpOnly': False, 'name': 'aam_uuid', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '75112168707138716923646796110120213036'}}
+2024-08-17 00:24:44,626 http://localhost:34789 "POST /session/87bd8f4de2dfc2f719195822007620e5/cookie HTTP/11" 200 0
+2024-08-17 00:24:44,626 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-17 00:24:44,626 Finished Request
+2024-08-17 00:24:44,626 POST http://localhost:34789/session/87bd8f4de2dfc2f719195822007620e5/cookie {'cookie': {'domain': '.www.linkedin.com', 'expiry': 1725027362, 'httpOnly': False, 'name': 'timezone', 'path': '/', 'sameSite': 'Lax', 'secure': True, 'value': 'Asia/Calcutta'}}
+2024-08-17 00:24:44,634 http://localhost:34789 "POST /session/87bd8f4de2dfc2f719195822007620e5/cookie HTTP/11" 200 0
+2024-08-17 00:24:44,635 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-17 00:24:44,635 Finished Request
+2024-08-17 00:24:44,635 POST http://localhost:34789/session/87bd8f4de2dfc2f719195822007620e5/cookie {'cookie': {'domain': '.linkedin.com', 'expiry': 1726409768, 'httpOnly': False, 'name': 'lms_ads', 'path': '/', 'sameSite': 'None', 'secure': True, 'value': 'AQFkoAqs_JZjBgAAAZFbi7W_d6mY2Kt5VdPp--femLostse4qEqP3dDHNyYYlYvjEyR8o2-cg0vbtkGrzSE0gta0LxOXgMJS'}}
+2024-08-17 00:24:44,644 http://localhost:34789 "POST /session/87bd8f4de2dfc2f719195822007620e5/cookie HTTP/11" 200 0
+2024-08-17 00:24:44,644 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-17 00:24:44,644 Finished Request
+2024-08-17 00:24:44,645 POST http://localhost:34789/session/87bd8f4de2dfc2f719195822007620e5/cookie {'cookie': {'domain': '.linkedin.com', 'expiry': 1726409767, 'httpOnly': False, 'name': 'AnalyticsSyncHistory', 'path': '/', 'sameSite': 'None', 'secure': True, 'value': 'AQL6w60G1D_DswAAAZFbi7LzewkdprQRMlisSL2ub7u2-jal8cuDUhavyB4cqbgk3kns-zYlT1paQA1ecVDw3g'}}
+2024-08-17 00:24:44,653 http://localhost:34789 "POST /session/87bd8f4de2dfc2f719195822007620e5/cookie HTTP/11" 200 0
+2024-08-17 00:24:44,654 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-17 00:24:44,654 Finished Request
+2024-08-17 00:24:44,654 POST http://localhost:34789/session/87bd8f4de2dfc2f719195822007620e5/cookie {'cookie': {'domain': '.linkedin.com', 'httpOnly': False, 'name': 'AMCVS_14215E3D5995C57C0A495C55%40AdobeOrg', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1'}}
+2024-08-17 00:24:44,661 http://localhost:34789 "POST /session/87bd8f4de2dfc2f719195822007620e5/cookie HTTP/11" 200 0
+2024-08-17 00:24:44,662 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-17 00:24:44,662 Finished Request
+2024-08-17 00:24:44,662 POST http://localhost:34789/session/87bd8f4de2dfc2f719195822007620e5/cookie {'cookie': {'domain': '.www.linkedin.com', 'expiry': 1755353756, 'httpOnly': True, 'name': 'li_rm', 'path': '/', 'sameSite': 'None', 'secure': True, 'value': 'AQE5ATYslQw6nAAAAZFbi2IpdpqNixJIyIYydmeNAme0t5lbwo_MNF6K131O0DExxFXrGqQ2Wyne0FzDn8tu9UTOudRM8pZh2KGb...'}}
+2024-08-17 00:24:44,670 http://localhost:34789 "POST /session/87bd8f4de2dfc2f719195822007620e5/cookie HTTP/11" 200 0
+2024-08-17 00:24:44,670 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-17 00:24:44,670 Finished Request
+2024-08-17 00:24:44,671 POST http://localhost:34789/session/87bd8f4de2dfc2f719195822007620e5/cookie {'cookie': {'domain': '.www.linkedin.com', 'expiry': 1755353756, 'httpOnly': True, 'name': 'li_at', 'path': '/', 'sameSite': 'None', 'secure': True, 'value': 'AQEDAVG06U8CR82eAAABkVuLhwcAAAGRf5gLB1YAIe6kkfVTT7Ujrh5uGG0kIxEMqHbRYygq-SBbB-wgOmOnnX_rn1IWbldB16RG...'}}
+2024-08-17 00:24:44,679 http://localhost:34789 "POST /session/87bd8f4de2dfc2f719195822007620e5/cookie HTTP/11" 200 0
+2024-08-17 00:24:44,679 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-17 00:24:44,679 Finished Request
+2024-08-17 00:24:44,679 POST http://localhost:34789/session/87bd8f4de2dfc2f719195822007620e5/cookie {'cookie': {'domain': '.linkedin.com', 'expiry': 1723872978, 'httpOnly': False, 'name': 'lidc', 'path': '/', 'sameSite': 'None', 'secure': True, 'value': '"b=TB03:s=T:r=T:a=T:p=T:g=6123:u=1:x=1:i=1723817771:t=1723872978:v=2:sig=AQGSNc8Qq54LZYAFCLkMinTLeMk...'}}
+2024-08-17 00:24:44,687 http://localhost:34789 "POST /session/87bd8f4de2dfc2f719195822007620e5/cookie HTTP/11" 200 0
+2024-08-17 00:24:44,687 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-17 00:24:44,687 Finished Request
+2024-08-17 00:24:44,688 POST http://localhost:34789/session/87bd8f4de2dfc2f719195822007620e5/cookie {'cookie': {'domain': '.www.linkedin.com', 'expiry': 1731593756, 'httpOnly': False, 'name': 'JSESSIONID', 'path': '/', 'sameSite': 'None', 'secure': True, 'value': '"ajax:3416755664060372681"'}}
+2024-08-17 00:24:44,695 http://localhost:34789 "POST /session/87bd8f4de2dfc2f719195822007620e5/cookie HTTP/11" 200 0
+2024-08-17 00:24:44,696 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-17 00:24:44,696 Finished Request
+2024-08-17 00:24:44,696 POST http://localhost:34789/session/87bd8f4de2dfc2f719195822007620e5/cookie {'cookie': {'domain': '.www.linkedin.com', 'expiry': 1755353768, 'httpOnly': True, 'name': 'bscookie', 'path': '/', 'sameSite': 'None', 'secure': True, 'value': '"v=1&20240816141546eb5a7d3b-0345-44ec-881b-b14c8d42dffeAQEtdAWbF3jFZ-S2djdHTJUQSNvp555i"'}}
+2024-08-17 00:24:44,704 http://localhost:34789 "POST /session/87bd8f4de2dfc2f719195822007620e5/cookie HTTP/11" 200 0
+2024-08-17 00:24:44,704 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-17 00:24:44,704 Finished Request
+2024-08-17 00:24:44,705 POST http://localhost:34789/session/87bd8f4de2dfc2f719195822007620e5/cookie {'cookie': {'domain': '.linkedin.com', 'expiry': 1731593767, 'httpOnly': False, 'name': '_guid', 'path': '/', 'sameSite': 'None', 'secure': True, 'value': '38679a8d-9eda-419e-95f0-c389210e9a50'}}
+2024-08-17 00:24:44,715 http://localhost:34789 "POST /session/87bd8f4de2dfc2f719195822007620e5/cookie HTTP/11" 200 0
+2024-08-17 00:24:44,715 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-17 00:24:44,715 Finished Request
+2024-08-17 00:24:44,716 POST http://localhost:34789/session/87bd8f4de2dfc2f719195822007620e5/cookie {'cookie': {'domain': '.linkedin.com', 'expiry': 1731593750, 'httpOnly': False, 'name': '_gcl_au', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': '1.1.991079514.1723817750'}}
+2024-08-17 00:24:44,740 http://localhost:34789 "POST /session/87bd8f4de2dfc2f719195822007620e5/cookie HTTP/11" 200 0
+2024-08-17 00:24:44,741 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-17 00:24:44,741 Finished Request
+2024-08-17 00:24:44,741 POST http://localhost:34789/session/87bd8f4de2dfc2f719195822007620e5/cookie {'cookie': {'domain': '.linkedin.com', 'httpOnly': False, 'name': 'lang', 'path': '/', 'sameSite': 'None', 'secure': True, 'value': 'v=2&lang=en-us'}}
+2024-08-17 00:24:44,753 http://localhost:34789 "POST /session/87bd8f4de2dfc2f719195822007620e5/cookie HTTP/11" 200 0
+2024-08-17 00:24:44,754 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-17 00:24:44,754 Finished Request
+2024-08-17 00:24:44,754 POST http://localhost:34789/session/87bd8f4de2dfc2f719195822007620e5/cookie {'cookie': {'domain': '.linkedin.com', 'expiry': 1731593756, 'httpOnly': False, 'name': 'liap', 'path': '/', 'sameSite': 'None', 'secure': True, 'value': 'true'}}
+2024-08-17 00:24:44,764 http://localhost:34789 "POST /session/87bd8f4de2dfc2f719195822007620e5/cookie HTTP/11" 200 0
+2024-08-17 00:24:44,765 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-17 00:24:44,765 Finished Request
+2024-08-17 00:24:49,766 POST http://localhost:34789/session/87bd8f4de2dfc2f719195822007620e5/url {'url': 'https://www.linkedin.com/in/aakanksha-singhal-268824281/'}
+2024-08-17 00:24:56,383 http://localhost:34789 "POST /session/87bd8f4de2dfc2f719195822007620e5/url HTTP/11" 200 0
+2024-08-17 00:24:56,383 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-17 00:24:56,383 Finished Request
+2024-08-17 00:24:56,383 Loading profile https://www.linkedin.com/in/aakanksha-singhal-268824281/
+2024-08-17 00:25:06,384 GET http://localhost:34789/session/87bd8f4de2dfc2f719195822007620e5/url {}
+2024-08-17 00:25:06,400 http://localhost:34789 "GET /session/87bd8f4de2dfc2f719195822007620e5/url HTTP/11" 200 0
+2024-08-17 00:25:06,400 Remote response: status=200 | data={"value":"https://www.linkedin.com/authwall?trk=bf&trkInfo=AQGXV3TDO2K0owAAAZFcivAYECIieRheSJA3KM-Vp0bZ83UFyQrERU4l2g6HNEiLGpU-PC_euVFmQLm5EoPmS0L7eqoKiot-ZAsfTSRMHgzfnZWGaOun8D6zRp_jLdVNcGJ_54I=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2Faakanksha-singhal-268824281%2F"} | headers=HTTPHeaderDict({'Content-Length': '300', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-17 00:25:06,400 Finished Request
+2024-08-17 00:26:06,400 Failed profile https://www.linkedin.com/in/aakanksha-singhal-268824281/ auth required
+2024-08-17 00:26:06,401 POST http://localhost:34789/session/87bd8f4de2dfc2f719195822007620e5/element {'using': 'xpath', 'value': "//h1[contains(@class, 'text-heading-xlarge inline t-24 v-align-middle break-words')]"}
+2024-08-17 00:26:06,445 http://localhost:34789 "POST /session/87bd8f4de2dfc2f719195822007620e5/element HTTP/11" 404 0
+2024-08-17 00:26:06,446 Remote response: status=404 | data={"value":{"error":"no such element","message":"no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//h1[contains(@class, 'text-heading-xlarge inline t-24 v-align-middle break-words')]\"}\n  (Session info: chrome=127.0.6533.99)","stacktrace":"#0 0x5591fd8af6ca \u003Cunknown>\n#1 0x5591fd580600 \u003Cunknown>\n#2 0x5591fd5cfbcb \u003Cunknown>\n#3 0x5591fd5cfeb1 \u003Cunknown>\n#4 0x5591fd613b24 \u003Cunknown>\n#5 0x5591fd5f28cd \u003Cunknown>\n#6 0x5591fd61104a \u003Cunknown>\n#7 0x5591fd5f2643 \u003Cunknown>\n#8 0x5591fd5c2d31 \u003Cunknown>\n#9 0x5591fd5c379e \u003Cunknown>\n#10 0x5591fd87725b \u003Cunknown>\n#11 0x5591fd87b1f2 \u003Cunknown>\n#12 0x5591fd864615 \u003Cunknown>\n#13 0x5591fd87bd82 \u003Cunknown>\n#14 0x5591fd84925f \u003Cunknown>\n#15 0x5591fd89ee68 \u003Cunknown>\n#16 0x5591fd89f040 \u003Cunknown>\n#17 0x5591fd8ae49c \u003Cunknown>\n#18 0x7f9fb7d4e1b7 start_thread\n#19 0x7f9fb7dd039c __clone3\n"}} | headers=HTTPHeaderDict({'Content-Length': '955', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-17 00:26:06,446 Finished Request
+2024-08-17 00:26:06,446 Disconnect profile error
 Traceback (most recent call last):
-  File "/home/avijitbera/Projects/Pyton/linkedin_automation/remove.py", line 73, in remove_profile
-    button = driver.find_element(By.XPATH,
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avijitbera/Projects/Pyton/linkedin_automation/remove.py", line 113, in remove_profile
+    name = driver.find_element(By.XPATH,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/home/avijitbera/Projects/Pyton/linkedin_automation/.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 748, in find_element
     return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -233,39 +133,31 @@ Traceback (most recent call last):
     self.error_handler.check_response(response)
   File "/home/avijitbera/Projects/Pyton/linkedin_automation/.venv/lib/python3.12/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//button[contains(@class, "rtdeco-button artdeco-button--muted artdeco-button--2 artdeco-button--secondary ember-view pvs-profile-actions__action")]"}
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//h1[contains(@class, 'text-heading-xlarge inline t-24 v-align-middle break-words')]"}
   (Session info: chrome=127.0.6533.99); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Stacktrace:
-#0 0x55c2bfdf66ca <unknown>
-#1 0x55c2bfac7600 <unknown>
-#2 0x55c2bfb16bcb <unknown>
-#3 0x55c2bfb16eb1 <unknown>
-#4 0x55c2bfb5ab24 <unknown>
-#5 0x55c2bfb398cd <unknown>
-#6 0x55c2bfb5804a <unknown>
-#7 0x55c2bfb39643 <unknown>
-#8 0x55c2bfb09d31 <unknown>
-#9 0x55c2bfb0a79e <unknown>
-#10 0x55c2bfdbe25b <unknown>
-#11 0x55c2bfdc21f2 <unknown>
-#12 0x55c2bfdab615 <unknown>
-#13 0x55c2bfdc2d82 <unknown>
-#14 0x55c2bfd9025f <unknown>
-#15 0x55c2bfde5e68 <unknown>
-#16 0x55c2bfde6040 <unknown>
-#17 0x55c2bfdf549c <unknown>
-#18 0x7f59f4e921b7 start_thread
-#19 0x7f59f4f1439c __clone3
+#0 0x5591fd8af6ca <unknown>
+#1 0x5591fd580600 <unknown>
+#2 0x5591fd5cfbcb <unknown>
+#3 0x5591fd5cfeb1 <unknown>
+#4 0x5591fd613b24 <unknown>
+#5 0x5591fd5f28cd <unknown>
+#6 0x5591fd61104a <unknown>
+#7 0x5591fd5f2643 <unknown>
+#8 0x5591fd5c2d31 <unknown>
+#9 0x5591fd5c379e <unknown>
+#10 0x5591fd87725b <unknown>
+#11 0x5591fd87b1f2 <unknown>
+#12 0x5591fd864615 <unknown>
+#13 0x5591fd87bd82 <unknown>
+#14 0x5591fd84925f <unknown>
+#15 0x5591fd89ee68 <unknown>
+#16 0x5591fd89f040 <unknown>
+#17 0x5591fd8ae49c <unknown>
+#18 0x7f9fb7d4e1b7 start_thread
+#19 0x7f9fb7dd039c __clone3
 
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/avijitbera/Projects/Pyton/linkedin_automation/remove.py", line 90, in remove_profile
-    driver.execute_script("arguments[0].click();", connect_buttons[0])
-                                                   ~~~~~~~~~~~~~~~^^^
-IndexError: list index out of range
-2024-08-16 08:17:30,259 DELETE http://localhost:38829/session/32d861ee6af6af42233ab4dcfee7b561 {}
-2024-08-16 08:17:30,317 http://localhost:38829 "DELETE /session/32d861ee6af6af42233ab4dcfee7b561 HTTP/11" 200 0
-2024-08-16 08:17:30,320 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
-2024-08-16 08:17:30,320 Finished Request
+2024-08-17 00:26:06,450 DELETE http://localhost:34789/session/87bd8f4de2dfc2f719195822007620e5 {}
+2024-08-17 00:26:06,505 http://localhost:34789 "DELETE /session/87bd8f4de2dfc2f719195822007620e5 HTTP/11" 200 0
+2024-08-17 00:26:06,505 Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2024-08-17 00:26:06,509 Finished Request

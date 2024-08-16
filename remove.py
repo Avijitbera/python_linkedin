@@ -27,6 +27,24 @@ LINKEDIN_USERNAME = ''
 LINKEDIN_PASSWORD = ''
 COOKIE_FILE = 'linkedin_cookies.pkl'
 
+formatter = logging.Formatter('%(asctime)s [remove.py] %(levelname)s %(message)s')
+
+
+def setup_logger(name, log_file, level=logging.INFO):
+    """To setup as many loggers as you want"""
+
+    handler = logging.FileHandler(log_file)
+    handler.setFormatter(formatter)
+
+    logger = logging.getLogger(name)
+    logger.setLevel(level)
+    logger.addHandler(handler)
+
+    return logger
+
+
+full_logger = setup_logger('full_logger', 'full_log.log')
+
 
 def login_and_save_cookies(driver):
     try:
@@ -40,13 +58,25 @@ def login_and_save_cookies(driver):
         password_field.send_keys(LINKEDIN_PASSWORD)
         time.sleep(2)
         password_field.submit()
-
+        full_logger.info("Login Success")
         time.sleep(10)  # Wait for login to complete
 
+        current_url = driver.current_url
+        if "checkpoint" in current_url and "challenge" in current_url:
+            full_logger.info("Verification screen")
+            time.sleep(60)
+
         # Save cookies
-        with open(COOKIE_FILE, 'wb') as file:
-            pickle.dump(driver.get_cookies(), file)
-        time.sleep(5)
+        cookie = driver.get_cookies()
+        if len(cookie) > 0:
+            with open(COOKIE_FILE, 'wb') as file:
+                pickle.dump(driver.get_cookies(), file)
+            full_logger.info("Cookies saved")
+            time.sleep(5)
+        else:
+            full_logger.info("Cookies not found")
+            time.sleep(5)
+
     except Exception as e:
         logger.error("Login error", exc_info=e)
 
@@ -60,26 +90,42 @@ def remove_profile(driver: WebDriver, url):
             for cookie in cookies:
                 driver.add_cookie(cookie)
 
+        time.sleep(5)
+
+
         driver.get(url)
-        time.sleep(20)
+        full_logger.info(f"Loading profile {url}")
+        time.sleep(10)
+        current_url = driver.current_url
+
+        if "authwall" in current_url:
+            time.sleep(60)
+            full_logger.info(f"Failed profile {url} auth required")
+
         print("Profile loaded")
+
         # button = driver.find_element(By.XPATH,
         #                              '//button[contains(@class, "artdeco-button artdeco-button--muted artdeco-button--2 artdeco-button--secondary ember-view pvs-profile-actions__action")]')
 
         # add_note_button = driver.find_element(By.XPATH,
         #                                       '//button[contains(@class, "artdeco-button artdeco-button--muted artdeco-button--2 artdeco-button--secondary ember-view pvs-profile-actions__action")]')
 
+        name = driver.find_element(By.XPATH,
+                                   "//h1[contains(@class, 'text-heading-xlarge inline t-24 v-align-middle break-words')]")
+
+        full_logger.info(f"Profile Loaded {name.text} || {url}")
+
         try:
             button = driver.find_element(By.XPATH,
                                          '//button[contains(@class, "rtdeco-button artdeco-button--muted artdeco-button--2 artdeco-button--secondary ember-view pvs-profile-actions__action")]')
-            print(button)
-            print(button.text)
+
             button.click()
             time.sleep(5)
             cancleButton = driver.find_element(By.XPATH,
                                                '//button[contains(@class, "artdeco-button artdeco-button--2 artdeco-button--primary ember-view artdeco-modal__confirm-dialog-btn")]')
             # cancleButton = driver.find_element(By.ID, "ember175")
             cancleButton.click()
+            full_logger.info(f"Disconnected with the profile || {url}")
             update_record(url, "Disconnect")
             time.sleep(5)
         except:
@@ -105,6 +151,7 @@ def remove_profile(driver: WebDriver, url):
                                                   '//button[contains(@class, "artdeco-button artdeco-button--2 artdeco-button--primary ember-view ml1")]')
             add_note_button.click()
             time.sleep(3)
+            full_logger.info(f"Disconnected with the profile || {url}")
             update_record(url, "Disconnect")
             time.sleep(5)
 
@@ -152,27 +199,47 @@ def load_remove_csv(driver):
     lines = [line.rstrip('\n') for line in r]
 
     lines.reverse()
+    full_logger.info("record.txt file loaded")
+    lists = []
+    if len(lines) > 0:
+        for item in lines:
+            url = item.split('||')
+            lists.append((url[0].strip(), url[1].strip()))
+
     with open('remove.csv', 'r') as f:
         reader = csv.reader(f)
         # loop through each row and print each value
         for row in reader:
-            print(row)
             for e in row:
-
                 if e != "url":
                     # remove_profile(driver, e)
-                    for lin in lines:
-
-                        if e in lin:
-
-                            status = lin.split('||')[1]
-                            # print(status)
-                            if status != "Disconnect":
-                                remove_profile(driver, e)
-                        else:
+                    if len(lines) > 0:
+                        result = [t for t in lists if t[0] == e and t[1] != "Disconnect"]
+                        if len(result) > 0:
                             remove_profile(driver, e)
+                        else:
+                            result = [t for t in lists if t[0] == e]
+                            if len(result) < 1:
+                                remove_profile(driver, e)
                     else:
                         remove_profile(driver, e)
+
+
+
+                        # for lin in lines:
+                        #
+                        #     if e in lin:
+                        #
+                        #         status = lin.split('||')[1]
+                        #         print(status)
+                        #         if status.strip() != "Disconnect":
+                        #             # remove_profile(driver, e)
+                        #             print("Connect")
+                        #     else:
+                        #         print("Connect")
+                            # remove_profile(driver, e)
+
+                        # remove_profile(driver, e)
 
 
 def update_record(url, send):
@@ -182,25 +249,22 @@ def update_record(url, send):
         fd.write(f'{url} || {send}\n')
 
 
-isConnected = False
-
-running = False
-
 
 def main():
+    check_connection()
     # threading.Timer(5.0, check_connection, ).start()
-    options = Options()
-    options.add_argument('--disable-notifications')
-    path = os.path.dirname(os.path.abspath(__file__))
-
-    driver = webdriver.Chrome(service=Service(executable_path=f"{path}{CHROME_DRIVER_PATH}"), options=options)
-    print("Internet connection is available. Continuing to check...")
-    if not os.path.exists(COOKIE_FILE):
-        login_and_save_cookies(driver)
-    else:
-        load_remove_csv(driver)
-
-    driver.quit()
+    # options = Options()
+    # options.add_argument('--disable-notifications')
+    # path = os.path.dirname(os.path.abspath(__file__))
+    #
+    # driver = webdriver.Chrome(service=Service(executable_path=f"{path}{CHROME_DRIVER_PATH}"), options=options)
+    # print("Internet connection is available. Continuing to check...")
+    # if not os.path.exists(COOKIE_FILE):
+    #     login_and_save_cookies(driver)
+    # else:
+    #     load_remove_csv(driver)
+    #
+    # driver.quit()
     # check_connection()
     # while True:
     #     global running
@@ -213,24 +277,37 @@ path = os.path.dirname(os.path.abspath(__file__))
 
 
 def check_connection():
-    global running
-    print(running)
-    print(is_connected())
-    if is_connected() == True and running == False:
-        isConnected = is_connected()
+    connected = is_connected()
+
+    if connected:
         options = Options()
         options.add_argument('--disable-notifications')
+        path = os.path.dirname(os.path.abspath(__file__))
 
-        running = True
         driver = webdriver.Chrome(service=Service(executable_path=f"{path}{CHROME_DRIVER_PATH}"), options=options)
         print("Internet connection is available. Continuing to check...")
         if not os.path.exists(COOKIE_FILE):
             login_and_save_cookies(driver)
+            load_remove_csv(driver)
         else:
             load_remove_csv(driver)
 
         driver.quit()
-        running = False
+    # if is_connected() == True and running == False:
+    #     isConnected = is_connected()
+    #     options = Options()
+    #     options.add_argument('--disable-notifications')
+    #
+    #     running = True
+    #     driver = webdriver.Chrome(service=Service(executable_path=f"{path}{CHROME_DRIVER_PATH}"), options=options)
+    #     print("Internet connection is available. Continuing to check...")
+    #     if not os.path.exists(COOKIE_FILE):
+    #         login_and_save_cookies(driver)
+    #     else:
+    #         load_remove_csv(driver)
+    #
+    #     driver.quit()
+    #     running = False
 
     # else:
     #     check_connection(driver)
@@ -247,14 +324,18 @@ def check_connection():
 
 
 def is_connected():
-    try:
-        # connect to the host -- tells us if the host is actually
-        # reachable
-        socket.create_connection(("1.1.1.1", 53))
-        return True
-    except OSError:
-        pass
-    return False
+    while True:
+
+        try:
+            # connect to the host -- tells us if the host is actually
+            # reachable
+            socket.create_connection(("1.1.1.1", 53))
+            full_logger.info("Connected")
+            return True
+        except OSError:
+            full_logger.info("Reconnecting...")
+            time.sleep(5)
+        # return False
 
 
 if __name__ == '__main__':
