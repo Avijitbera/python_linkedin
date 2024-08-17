@@ -23,8 +23,8 @@ logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
 
 CHROME_DRIVER_PATH = '/chromedriver'
-LINKEDIN_USERNAME = 'offlyapp@gmail.com'
-LINKEDIN_PASSWORD = 'TesterBest@2027'
+LINKEDIN_USERNAME = ''
+LINKEDIN_PASSWORD = ''
 COOKIE_FILE = 'linkedin_cookies.pkl'
 
 formatter = logging.Formatter('%(asctime)s [connect.py] %(levelname)s %(message)s')
